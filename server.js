@@ -4,10 +4,14 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const dotanv = require('dotenv')
 const { bgCyan } = require('colors')
+const connectDB = require('./config/config')
 require('colors')
 
 //dotenv config
 dotanv.config()
+
+//DB config
+connectDB()
 
 // rest api
 const app = express()
