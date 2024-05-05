@@ -7,4 +7,4 @@ const router = express.Router()
 //Method - Get
 router.get('/get-item',getItemController)
 
-module.export = router
+module.exports = router

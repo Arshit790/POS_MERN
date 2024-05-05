@@ -1,5 +1,5 @@
 const itemModel = require("../models/itemModels");
-export const getItemController = async (req, res) => {
+const getItemController = async (req, res) => {
   try {
     const items = await itemModel.find();
     res.status(200).send(items);
@@ -7,3 +7,5 @@ export const getItemController = async (req, res) => {
     console.log(error);
   }
 };
+
+module.exports = {getItemController}
