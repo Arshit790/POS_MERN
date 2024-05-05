@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const connectDb = require('./config/config')
 const itemModel = require('./models/itemModels')
-const itemData = require('./utils/data')
+const items = require('./utils/data')
 require('colors')
 
 //config
