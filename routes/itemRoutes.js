@@ -9,7 +9,7 @@ const router = express.Router()
 router.get('/get-item',getItemController)
 
 //Method - Post
-router.get('/add-item',addItemController)
+router.post('/add-item',addItemController)
 
 
 module.exports = router
