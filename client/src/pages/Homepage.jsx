@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DefaultLayout from "../components/DefaultLayout";
+import ItemList from "../components/ItemList";
 import axios from "axios";
 import { Row, Col } from "antd";
 
