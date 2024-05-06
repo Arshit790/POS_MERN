@@ -1,10 +1,11 @@
 import React from "react";
+import DefaultLayout from "../components/DefaultLayout";
 
 const ItemPage = () => {
   return (
-    <div>
+    <DefaultLayout>
       <h1>ItemsPage</h1>
-    </div>
+    </DefaultLayout>
   );
 };
 
