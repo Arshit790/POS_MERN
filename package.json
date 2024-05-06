@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client" : "npm run dev --prefix client",
-    "dev" : "concurrently \"npm run server\" \"npm run client\" ",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "seed": "node seeder.js"
   },
   "author": "Arshit",
@@ -21,6 +21,7 @@
     "express": "^4.19.2",
     "mongoose": "^8.3.2",
     "morgan": "^1.10.0",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "redux-thunk": "^3.1.0"
   }
 }
