@@ -1,15 +1,15 @@
 import React from "react";
-import { Card } from "antd";
+import { Button,Card } from "antd";
 
 const ItemList = ({ item }) => {
  
-  // //update cart handler
-  // const handleAddTOCart = () => {
-  //   dispatch({
-  //     type: "ADD_TO_CART",
-  //     payload: item,
-  //   });
-  // };
+  //update cart handler
+  const handleAddTOCart = () => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: item,
+    });
+  };
   const { Meta } = Card;
   return (
     <div>
@@ -18,9 +18,9 @@ const ItemList = ({ item }) => {
         cover={<img alt={item.name} src={item.image} style={{ height: 200 }} />}
       >
         <Meta title={item.name} />
-        {/* <div className="item-button">
+        <div className="item-button">
           <Button onClick={() => handleAddTOCart()}>Add to cart</Button>
-        </div> */}
+        </div>
       </Card>
     </div>
   );
