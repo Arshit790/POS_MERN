@@ -1,4 +1,3 @@
-
 const items = [
   {
     name: "Tea",
@@ -31,7 +30,8 @@ const items = [
     name: "Chicken Hakka",
     price: 7,
     category: "noodles",
-    image: "https://cravecookclick.com/wp-content/uploads/2012/07/IMG_4400.jpg",
+    image:
+      "https://www.whiskaffair.com/wp-content/uploads/2018/03/Chicken-Hakka-Noodles-2-1.jpg",
   },
   {
     name: "Eggy",
