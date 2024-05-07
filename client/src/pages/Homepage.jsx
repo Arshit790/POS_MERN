@@ -7,6 +7,22 @@ import { useDispatch } from "react-redux";
 const Homepage = () => {
   const [itemsData, setItemsData] = useState([]);
   const dispatch = useDispatch();
+  const [selectedCategory, setSelectedCategory] = useState("drinks");
+  const categories = [
+    {
+      name: "drink",
+      imageUrl: "https://cdn-icons-png.flaticon.com/512/430/430561.png",
+    },
+    {
+      name: "rice",
+      imageUrl: "https://cdn-icons-png.flaticon.com/512/3174/3174880.png",
+    },
+    {
+      name: "noodles",
+      imageUrl: "https://cdn-icons-png.flaticon.com/512/1471/1471262.png",
+    },
+  ];
+
   //useffect
   useEffect(() => {
     const getAllItems = async () => {
@@ -28,6 +44,19 @@ const Homepage = () => {
   }, [dispatch]);
   return (
     <DefaultLayout>
+      <div className="d-flex">
+        {categories.map((category) => (
+          <div key={category.name} className="d-flex  category">
+            <h4>{category.name}</h4>
+            <img
+              src={category.imageUrl}
+              alt={category.name}
+              height="40"
+              width="60"
+            />
+          </div>
+        ))}
+      </div>
       <Row>
         {itemsData.map((item) => (
           <Col xs={24} lg={6} md={12} sm={6}>
