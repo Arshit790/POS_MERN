@@ -23,6 +23,9 @@ const ItemPage = () => {
       });
       console.log(data);
     } catch (error) {
+      dispatch({
+        type: "HIDE_LOADING",
+      });
       console.log(error);
     }
   };
@@ -30,6 +33,29 @@ const ItemPage = () => {
   useEffect(() => {
     getAllItems();
   }, []);
+
+  //handle delete
+
+  const handleDelete = async (record) => {
+    try {
+      dispatch({
+        type: "SHOW_LOADING",
+      });
+      await axios.post("/api/items/delete-item", { itemId: record._id });
+      message.success("Item Deleted Successfully");
+      getAllItems();
+      setPopupModal(false);
+      dispatch({
+        type: "HIDE_LOADING",
+      });
+    } catch (error) {
+      dispatch({
+        type: "HIDE_LOADING",
+      });
+      message.error("Something Went Wrong");
+      console.log(error);
+    }
+  };
 
   // table data
   const columns = [
@@ -55,7 +81,12 @@ const ItemPage = () => {
               setPopupModal(true);
             }}
           />
-          <DeleteOutlined style={{ cursor: "pointer" }} />
+          <DeleteOutlined
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              handleDelete(record);
+            }}
+          />
         </div>
       ),
     },
@@ -95,6 +126,9 @@ const ItemPage = () => {
           type: "HIDE_LOADING",
         });
       } catch (error) {
+        dispatch({
+          type: "HIDE_LOADING",
+        });
         message.error("Something Went Wrong");
         console.log(error);
       }
