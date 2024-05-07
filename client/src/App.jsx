@@ -10,9 +10,30 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/items" element={<ItemPage />} />
-          <Route path="/cart" element={<CartPage />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Homepage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/items"
+            element={
+              <ProtectedRoute>
+                <ItemPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute>
+                <CartPage />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
@@ -22,3 +43,11 @@ function App() {
 }
 
 export default App;
+
+export function ProtectedRoute({ children }) {
+  if (localStorage.getItem("auth")) {
+    return children;
+  } else {
+    return <Navigate to="/login" />;
+  }
+}
