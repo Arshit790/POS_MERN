@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Layout, Menu } from "antd";
 import { Link } from "react-router-dom";
@@ -22,6 +22,11 @@ const DefaultLayout = ({ children }) => {
   const toggle = () => {
     setCollapsed(!collapsed);
   };
+
+  // to get local storage data
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   return (
     <Layout>

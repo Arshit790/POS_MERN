@@ -1,8 +1,8 @@
 import React from "react";
-import { Button,Card } from "antd";
-
+import { Button, Card } from "antd";
+import { useDispatch } from "react-redux";
 const ItemList = ({ item }) => {
- 
+  const dispatch = useDispatch();
   //update cart handler
   const handleAddTOCart = () => {
     dispatch({
