@@ -25,7 +25,7 @@ const Homepage = () => {
       }
     };
     getAllItems();
-  }, []);
+  }, [dispatch]);
   return (
     <DefaultLayout>
       <Row>
