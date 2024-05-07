@@ -63,20 +63,41 @@ const ItemPage = () => {
 
   //handle submit
   const handleSubmit = async (value) => {
-    try {
-      dispatch({
-        type: "SHOW_LOADING",
-      });
-      const res = await axios.post("/api/items/add-item", value);
-      message.success("Item Added Successfully");
-      getAllItems();
-      setPopupModal(false);
-      dispatch({
-        type: "HIDE_LOADING",
-      });
-    } catch (error) {
-      message.error("Something Went Wrong");
-      console.log(error);
+    if (editItem === null) {
+      try {
+        dispatch({
+          type: "SHOW_LOADING",
+        });
+        const res = await axios.post("/api/items/add-item", value);
+        message.success("Item Added Successfully");
+        getAllItems();
+        setPopupModal(false);
+        dispatch({
+          type: "HIDE_LOADING",
+        });
+      } catch (error) {
+        message.error("Something Went Wrong");
+        console.log(error);
+      }
+    } else {
+      try {
+        dispatch({
+          type: "SHOW_LOADING",
+        });
+        const res = await axios.put("/api/items/edit-item", {
+          ...value,
+          itemId: editItem._id,
+        });
+        message.success("Item Updated Successfully");
+        getAllItems();
+        setPopupModal(false);
+        dispatch({
+          type: "HIDE_LOADING",
+        });
+      } catch (error) {
+        message.error("Something Went Wrong");
+        console.log(error);
+      }
     }
   };
 
