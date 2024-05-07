@@ -23,3 +23,20 @@ body {
   height: 100px;
   width: 100px;
 }
+
+.category {
+  border: 2px solid gray;
+  margin-right: 25px;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.category img {
+  margin-left: 10px;
+}
+
+.category-active {
+  border: 2px solid green;
+  background-color: rgba(128, 128, 128, 0.501);
+}
