@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 #components-layout-demo-custom-trigger .trigger {
   padding: 0 24px;
   font-size: 18px;
@@ -46,6 +50,10 @@
   margin-left: 10px;
 }
 
+li .ant-menu-item {
+  text-decoration: none;
+}
+
 .ant-layout-header {
   line-height: 0;
   display: flex;
@@ -53,13 +61,13 @@
   align-items: center;
 }
 
-.cart-item{
+.cart-item {
   padding-left: 20px;
   padding-right: 30px;
   cursor: pointer;
 }
 
-.cart-item p{
+.cart-item p {
   margin-top: 10px;
   font-weight: bold;
 }

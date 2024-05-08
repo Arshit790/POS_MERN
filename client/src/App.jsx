@@ -1,5 +1,5 @@
 import "antd/dist/reset.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route ,Navigate} from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import ItemPage from "./pages/ItemPage";
 import CartPage from "./pages/CartPage";
