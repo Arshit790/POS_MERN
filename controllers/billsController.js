@@ -1,11 +1,22 @@
-const itemModel = require("../models/billsModel");
+const billsModel = require("../models/billsModel");
 
-//get items
+//add bills
 const addBillsController = async (req, res) => {
   try {
     const newBill = await billsModel(req.body);
-    newBill.save()
-    res.status(201).send('Bill Created Successfully');
+    newBill.save();
+    res.send("Bill Created Successfully");
+  } catch (error) {
+    res.send("Something Went Wrong");
+    console.log(error);
+  }
+};
+
+//get bills data
+const getBillsController = async (req, res) => {
+  try {
+    const bills = await billsModel.find();
+    res.send(bills);
   } catch (error) {
     console.log(error);
   }
@@ -13,4 +24,5 @@ const addBillsController = async (req, res) => {
 
 module.exports = {
   addBillsController,
+  getBillsController,
 };

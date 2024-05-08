@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import { useSelector, useDispatch } from "react-redux";
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 import {
   DeleteOutlined,
   PlusCircleOutlined,
@@ -13,6 +15,7 @@ const CartPage = () => {
   const [subTotal, setSubTotal] = useState(0);
   const [billPopup, setBillPopup] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const { cartItems } = useSelector((state) => state.RootReducer);
   //handle increment
   const handleIncrement = (record) => {
